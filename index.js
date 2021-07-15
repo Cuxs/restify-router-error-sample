@@ -9,6 +9,8 @@ router.add('/api-partners', moreRoutes.routes);
 // apply modules' routes to server
 router.applyRoutes(server);
 
+server.get('/root', (req, res) => res.send({ status: 'ok', message: 'root' }))
+
 server.listen(process.env.PORT || 4001, () => {
   console.log('%s listening at %s', server.name, server.url);
 });
